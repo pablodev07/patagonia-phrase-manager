@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PhraseCard from './PhraseCard';
+import { PhraseContext } from '../context/PhraseContext';
 
-const PhraseList = ({ phrases, deletePhrase }) => {
+const PhraseList = () => {
+  const { phrases, deletePhrase } = useContext(PhraseContext);
+
   return (
     <div className="phrase-list">
       {phrases.map((phrase, index) => (

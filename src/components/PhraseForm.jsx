@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { PhraseContext } from '../context/PhraseContext';
 
-const PhraseForm = ({ addPhrase }) => {
+const PhraseForm = () => {
   const [phrase, setPhrase] = useState('');
+  const { addPhrase } = useContext(PhraseContext);
 
-  // Maneja el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     if (phrase.trim()) {
-      addPhrase(phrase); // Envía la frase al componente principal
-      setPhrase(''); // Limpia el campo de texto
+      addPhrase(phrase);
+      setPhrase('');
     }
   };
 
