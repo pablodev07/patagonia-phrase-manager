@@ -1,8 +1,8 @@
 import React from 'react';
 import PhraseForm from './components/PhraseForm';
-import PhraseList from './components/PhraseList';
 import { PhraseProvider } from './context/PhraseContext';
 import './App.css';
+import PhraseListWithSearch from './components/PhraseListWithSearch';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <h1>Gestor de Frases</h1>
         <PhraseForm />
-        <PhraseList />
+        <PhraseListWithSearch />
       </div>
     </PhraseProvider>
   );
