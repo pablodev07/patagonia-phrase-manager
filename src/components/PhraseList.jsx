@@ -1,5 +1,6 @@
 import React from 'react';
 import PhraseCard from './PhraseCard';
+import PropTypes from 'prop-types';
 
 const PhraseList = ({ phrases, deletePhrase, editPhrase }) => {
   return (
@@ -14,6 +15,12 @@ const PhraseList = ({ phrases, deletePhrase, editPhrase }) => {
       ))}
     </div>
   );
+};
+
+PhraseList.propTypes = {
+  phrases: PropTypes.string,
+  deletePhrase: PropTypes.func,
+  editPhrase: PropTypes.func,
 };
 
 export default PhraseList;

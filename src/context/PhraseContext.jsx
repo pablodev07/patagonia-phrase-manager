@@ -1,4 +1,5 @@
-import React, { useReducer, createContext } from 'react';
+import React, { useReducer, createContext, useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { phraseReducer } from './phraseReducer';
 
 export const PhraseContext = createContext();
@@ -18,9 +19,23 @@ export const PhraseProvider = ({ children }) => {
     dispatch({ type: 'EDIT_PHRASE', payload: { index, editedPhrase } });
   };
 
+  const value = useMemo(
+    () => ({
+      phrases,
+      addPhrase,
+      deletePhrase,
+      editPhrase,
+    }),
+    [phrases]
+  );
+
   return (
-    <PhraseContext.Provider value={{ phrases, addPhrase, deletePhrase, editPhrase }}>
+    <PhraseContext.Provider value={value}>
       {children}
     </PhraseContext.Provider>
   );
+};
+
+PhraseProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };

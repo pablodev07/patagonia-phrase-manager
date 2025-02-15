@@ -8,8 +8,8 @@ function App() {
   return (
     <PhraseProvider>
       <div className="app">
-        <div className="py-7 px-10 rounded-3xl bg-linear-to-r from-orange-700 to-orange-300 mb-10">
-          <h1 className="font-bold text-white text-[3em]">Gestor de Frases</h1>
+        <div className="py-7 px-10 rounded-xl lg:rounded-3xl bg-linear-to-r from-orange-700 to-orange-300 mb-10 w-full lg:w-[780px] lg:mx-auto">
+          <h1 className="font-bold text-white text-2xl lg:text-[3em]">Gestor de Frases</h1>
         </div>
         <PhraseForm />
         <PhraseListWithSearch />

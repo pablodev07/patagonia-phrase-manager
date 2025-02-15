@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaPen, FaTrashCan, FaCheck } from "react-icons/fa6";
+import PropTypes from 'prop-types';
 
 const PhraseCard = ({ phrase, onDelete, onEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -17,7 +18,7 @@ const PhraseCard = ({ phrase, onDelete, onEdit }) => {
   };
 
   return (
-    <div className="phrase-card flex bg-black rounded-3xl p-4 rounded-lg shadow-md w-[250px] max-w-[250px]  h-full">
+    <div className="phrase-card flex bg-black rounded-3xl p-4 rounded-lg shadow-md lg:w-[250px] max-w-[250px]  h-full">
       {isEditing ? (
         <div className="flex flex-col w-full justify-end">
           <textarea
@@ -34,7 +35,8 @@ const PhraseCard = ({ phrase, onDelete, onEdit }) => {
           )}
           <button
             onClick={handleSave}
-            className="text-white px-4 py-2 rounded hover:bg-lime-600 w-fit ml-auto"
+            className="text-white px-4 py-2 rounded hover:bg-lime-600 w-fit ml-auto hover:cursor-pointer"
+            aria-label="Guardar frase editada"
           >
             <FaCheck/>
           </button>
@@ -45,13 +47,15 @@ const PhraseCard = ({ phrase, onDelete, onEdit }) => {
           <div className="flex space-x-2 mt-auto justify-end">
             <button
               onClick={() => setIsEditing(true)}
-              className="bg-transparent text-white px-4 py-2 rounded hover:bg-cyan-600"
+              className="bg-transparent text-white px-4 py-2 rounded hover:bg-cyan-600 hover:cursor-pointer"
+              aria-label="Editar frase"
             >
               <FaPen/>
             </button>
             <button
               onClick={onDelete}
-              className="bg-transparent text-white px-4 py-2 rounded hover:bg-pink-800"
+              className="bg-transparent text-white px-4 py-2 rounded hover:bg-pink-800 hover:cursor-pointer"
+              aria-label="Eliminar frase"
             >
               <FaTrashCan/>
             </button>
@@ -60,6 +64,12 @@ const PhraseCard = ({ phrase, onDelete, onEdit }) => {
       )}
     </div>
   );
+};
+
+PhraseCard.propTypes = {
+  phrase: PropTypes.string,
+  onDelete: PropTypes.func,
+  onEdit: PropTypes.func,
 };
 
 export default PhraseCard;
