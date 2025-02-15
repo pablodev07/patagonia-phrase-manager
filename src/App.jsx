@@ -7,8 +7,10 @@ import PhraseListWithSearch from './components/PhraseListWithSearch';
 function App() {
   return (
     <PhraseProvider>
-      <div className="App">
-        <h1>Gestor de Frases</h1>
+      <div className="app">
+        <div className="py-7 px-10 rounded-3xl bg-linear-to-r from-orange-700 to-orange-300 mb-10">
+          <h1 className="font-bold text-white text-[3em]">Gestor de Frases</h1>
+        </div>
         <PhraseForm />
         <PhraseListWithSearch />
       </div>

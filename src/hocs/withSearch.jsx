@@ -17,7 +17,7 @@ const withSearch = (WrappedComponent) => {
           placeholder="Buscar frases..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-input"
+          className="search-input p-2 rounded-lg bg-gray-100 resize-none mb-2"
         />
         <WrappedComponent {...props} phrases={filteredPhrases} />
       </div>

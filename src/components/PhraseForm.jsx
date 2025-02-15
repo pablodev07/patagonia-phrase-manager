@@ -14,14 +14,15 @@ const PhraseForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="phraseForm">
       <input
         type="text"
         placeholder="Agregar una frase..."
         value={phrase}
         onChange={(e) => setPhrase(e.target.value)}
+        className="rounded border border-gray-300 p-5"
       />
-      <button type="submit">Agregar</button>
+      <button className="text-white" type="submit">Agregar</button>
     </form>
   );
 };
