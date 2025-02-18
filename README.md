@@ -10,7 +10,7 @@ Una aplicación web desarrollada en **React** que permite agregar, editar, elimi
 - **Hooks**: `useState`, `useReducer`, `useContext`, `useMemo`.
 - **Context API**: Para manejo global del estado.
 - **High Order Components (HOC)**: Para agregar funcionalidad de búsqueda de manera abstraída.
-- **Jest y React Testing Library**: Para pruebas unitarias.
+- **Jest y React Testing Library**: Para unit testing (pruebas unitarias).
 
 ---
 
@@ -55,7 +55,7 @@ El proyecto incluye pruebas unitarias para los siguientes componentes:
 2. **`PhraseList`**:
    - Verifica que se rendericen las frases correctamente.
 
-Los tests están escritos con **Jest** y **React Testing Library**, y se ejecutan con el siguiente comando:
+Los tests están escritos con **Jest** y **React Testing Library**. Ejecutalos con:
 
 ```bash
 npm test
