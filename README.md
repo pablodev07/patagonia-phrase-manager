@@ -10,6 +10,7 @@ Una aplicación web desarrollada en **React** que permite agregar, editar, elimi
 - **Hooks**: `useState`, `useReducer`, `useContext`, `useMemo`.
 - **Context API**: Para manejo global del estado.
 - **High Order Components (HOC)**: Para agregar funcionalidad de búsqueda de manera abstraída.
+- **Jest y React Testing Library**: Para pruebas unitarias.
 
 ---
 
@@ -38,3 +39,23 @@ Una aplicación web desarrollada en **React** que permite agregar, editar, elimi
    - `useMemo` para evitar que se recree el objeto de contexto en cada renderizado.
    - `useReducer` para manejar el estado de las frases.
 
+8. **Pruebas Unitarias**:
+   - Tests para `PhraseCard` y `PhraseList` usando **Jest** y **React Testing Library**.
+
+---
+
+## 🧪 Pruebas Unitarias
+
+El proyecto incluye pruebas unitarias para los siguientes componentes:
+
+1. **`PhraseCard`**:
+   - Verifica que se muestre la frase correctamente.
+   - Prueba la funcionalidad de editar y eliminar frases.
+
+2. **`PhraseList`**:
+   - Verifica que se rendericen las frases correctamente.
+
+Los tests están escritos con **Jest** y **React Testing Library**, y se ejecutan con el siguiente comando:
+
+```bash
+npm test
